@@ -1,0 +1,22 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NSS |GLA University</title>
+
+    {#  stylesheet  #}
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    
+    {#  font awesome cdn #}
+    <script src="https://kit.fontawesome.com/08bbafbe03.js" crossorigin="anonymous"></script>
+</head>
+<body>
+{% block homepage %}
+{% endblock %}
+<script src="{% static '/js/main.js' %}"></script>
+</body>
+</html>
