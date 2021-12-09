@@ -1,7 +1,55 @@
 {% extends 'base/main.html' %}
-{% load static %}
-{% block homepage %}
+{% load static %} 
+{% block homepage %} 
 {% include 'base/navbar.html' %}
+<script>
+  document.title = "NSS | GLA University";
+</script>
 
-    <script>document.title = "NSS | GLA University";</script>
+<!-- span-1 code starts here -->
+<section class="slideshow-section">
+  <div id="slider">
+    <figure>
+      <img
+        src="{% static '/img/sliding-img/desk1.png' %}"
+        alt="img-1"
+        srcset=""
+      />
+      <img
+        src="{% static '/img/sliding-img/desk2.png' %}"
+        alt="img-2"
+        srcset=""
+      />
+      <img
+        src="{% static '/img/sliding-img/desk3.png' %}"
+        alt="img-3"
+        srcset=""
+      />
+      <img
+        src="{% static '/img/sliding-img/desk4.jpg' %}"
+        alt="img-4"
+        srcset=""
+      />
+      <img
+        src="{% static '/img/sliding-img/desk1.png' %}"
+        alt="img-5"
+        srcset=""
+      />
+    </figure>
+  </div>
+
+  <div id="description">
+    <div id="description-heading">
+      <h1>My Hero Academia</h1>
+    </div>
+    <div id="detailed-text">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab laboriosam
+        praesentium corrupti! Quasi explicabo recusandae sit earum, alias vero
+        ex voluptates officiis aliquid reprehenderit assumenda accusamus fugit
+        ab quidem harum!
+      </p>
+    </div>
+  </div>
+</section>
 {% endblock homepage %}
