@@ -7,10 +7,11 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+/* navbar css styling code starts here */
 nav {
     background: #222222;
     padding: 10px 40px 10px 70px;
-    border: 1px solid ;
+    border: 1px solid;
     border-left: none;
     border-right: none;
     display: flex;
@@ -26,7 +27,7 @@ nav ul {
 
 }
 
-.logo{
+.logo {
     display: flex;
 }
 
@@ -37,43 +38,44 @@ nav ul {
     font-weight: 700;
 }
 
-.logo> .logo-img{
+.logo>.logo-img {
     width: 40px;
     border-radius: 20px;
 }
-.nav-links-1{
+
+.nav-links-1 {
     padding: 0 25px;
     display: inline-flex;
 }
 
-.nav-links-1> li> a{
+.nav-links-1>li>a {
     text-decoration: none;
     font-size: 18px;
     padding: 0 12px;
     color: #ffffff;
 }
 
-.nav-links-1> li> p{
+.nav-links-1>li>p {
     text-decoration: none;
     font-size: 18px;
     padding: 0 12px;
     color: #ffffff;
 }
 
-.nav-links-1> li> a:hover{
+.nav-links-1>li>a:hover {
     color: cyan;
 }
 
 
-.search-icon{
-        height: 40px;
-        width: 240px;
-        display: flex;
-        background: #f2f2f2;
-        border-radius: 5px;
+.search-icon {
+    height: 40px;
+    width: 240px;
+    display: flex;
+    background: #f2f2f2;
+    border-radius: 5px;
 }
 
-.search-icon> input{
+.search-icon>input {
     height: 100%;
     width: 200px;
     border: none;
@@ -84,7 +86,7 @@ nav ul {
     border-radius: 5px 0 0 5px;
 }
 
-.icon{
+.icon {
     height: 100%;
     width: 40px;
     line-height: 40px;
@@ -94,25 +96,27 @@ nav ul {
     cursor: pointer;
 }
 
-.icon:hover{
+.icon:hover {
     background: #e6e6e6;
 
 }
 
-.icon> span{
+.icon>span {
     color: #222222;
     font-size: 18px;
 }
 
-.btn{
+.btn {
     font-size: 29px;
     flex: 1;
     padding: 0 40px;
     display: none;
 }
 
-.btn> span{
+.btn>span {
     height: 42px;
+    align-content: center;
+    align-items: center;
     width: 42px;
     text-align: center;
     line-height: 42px;
@@ -121,65 +125,174 @@ nav ul {
     cursor: pointer;
 }
 
-nav ul li.btn > span.show::before{
+nav ul li.btn>span.show::before {
     content: '\f00d';
 }
 
-@media screen and (max-width: 1052px) {
-    nav{
+/* navbar css styling code ends here. */
+
+/* span1 code starts here */
+
+.slideshow-section {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        'slider description';
+    gap: 100px;
+    text-align: center;
+    align-content: center;
+    min-height: 10em;
+    z-index: -5;
+}
+
+.slideshow-section>#slider {
+    overflow: hidden;
+    border-radius: 5px;
+    z-index: -5;
+}
+
+.slideshow-section>#slider>figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slider infinite;
+    z-index: -5;
+}
+
+.slideshow-section>#slider>figure>img {
+    width: 20%;
+    float: left;
+    z-index: -5;
+}
+
+@keyframes slider {
+    0% {
+        left: 0;
+    }
+
+    20% {
+        left: 0;
+    }
+
+    25% {
+        left: -100%;
+    }
+
+    45% {
+        left: -100%;
+    }
+
+    50% {
+        left: -200%;
+    }
+
+    70% {
+        left: -200%;
+    }
+
+    75% {
+        left: -300%;
+    }
+
+    95% {
+        left: -300%;
+    }
+
+    100% {
+        left: -400%;
+    }
+
+}
+
+#description{
+    padding-top: 100px;
+    text-align: center;
+}
+
+#description> #detailed-text> p{
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+    nav {
         padding: 10px 40px 10px 0px;
     }
 
-    .logo> h1{
+    .logo>h1 {
         display: none;
     }
 
-    .nav-links-1{
+    .nav-links-1 {
         flex: 4;
+    }
+
+    .slideshow-section{
+        width: 95%;
     }
 }
 
 @media screen and (max-width: 800px) {
-    
-    
 
-    .logo{
+    .logo {
         display: none;
-    }  
-    .btn{
-          display: block;
-      }
-      nav{
-          z-index: 1;
-          padding: 9px 40px 9px 0;
-      }
+    }
 
-      .nav-links-1{
-          z-index: -1;
-          position: fixed;
-          top: -220PX;
-          right: 0px;
-          width: 100%;
-          background: #222222;
-          display: inline-block;
-          transition: top .4s;
-      }
+    .btn {
+        display: block;
+        align-content: center;
+        align-items: center;
+    }
 
-      .nav-links-1.show{
-          top: 60px;
-      }
+    nav {
+        z-index: 1;
+        padding: 9px 40px 9px 0;
+    }
 
-      .nav-links-1> li{
-          text-align: center;
-          line-height: 30px;
-          margin: 30px 0;
-      }
+    .nav-links-1 {
+        z-index: -1;
+        position: fixed;
+        top: -220PX;
+        right: 0px;
+        width: 100%;
+        background: #222222;
+        display: inline-block;
+        transition: top .4s;
+    }
 
-      .nav-links-1> li> p{
-          display: none;
-      }
+    .nav-links-1.show {
+        top: 60px;
+        /* z-index: 1; */
+    }
 
-      .nav-links-1> li> a{
+    .nav-links-1>li {
+        text-align: center;
+        line-height: 30px;
+        margin: 30px 0;
+    }
+
+    .nav-links-1>li>p {
+        display: none;
+    }
+
+    .nav-links-1>li>a {
         font-size: 19px;
     }
+
+    .slideshow-section {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'slider'
+            'description';
+        gap: 50px;
+    }
+
+    #description{
+        padding-top: 0px;
+        text-align: center;
+    }
+
 }
