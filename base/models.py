@@ -12,3 +12,12 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+
+class Post(models.Model):
+    post_title = models.CharField(max_length=50)
+    description = models.TextField(max_length=100)
+    link = models.URLField(max_length=200)
+    thumbnail = models.ImageField(upload_to ='posts/%Y/%m/%d/')
+
+    def __str__(self):
+        return self.post_title

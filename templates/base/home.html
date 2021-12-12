@@ -1,4 +1,4 @@
-{% extends 'base/main.html' %}
+{% extends 'base/main.html' %} 
 {% load static %} 
 {% block homepage %} 
 {% include 'base/navbar.html' %}
@@ -11,17 +11,17 @@
   <div id="slider">
     <figure>
       <img
-        src="{% static '/img/sliding-img/desk1.png' %}"
+        src="{% static '/img/sliding-img/desk1.jpg' %}"
         alt="img-1"
         srcset=""
       />
       <img
-        src="{% static '/img/sliding-img/desk2.png' %}"
+        src="{% static '/img/sliding-img/desk2.jpg' %}"
         alt="img-2"
         srcset=""
       />
       <img
-        src="{% static '/img/sliding-img/desk3.png' %}"
+        src="{% static '/img/sliding-img/desk3.jpg' %}"
         alt="img-3"
         srcset=""
       />
@@ -31,7 +31,7 @@
         srcset=""
       />
       <img
-        src="{% static '/img/sliding-img/desk1.png' %}"
+        src="{% static '/img/sliding-img/desk1.jpg' %}"
         alt="img-5"
         srcset=""
       />
@@ -40,7 +40,7 @@
 
   <div id="description">
     <div id="description-heading">
-      <h1>My Hero Academia</h1>
+      <h1>NSS GLA University</h1>
     </div>
     <div id="detailed-text">
       <p>
@@ -52,4 +52,43 @@
     </div>
   </div>
 </section>
+
+<!-- section 2 code starts here or Project showcase section -->
+<section class="social-projects-container">
+  <div class="project-container">
+    <h1>Social Projects</h1>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente debitis
+      tenetur, rerum voluptates doloremque iure harum! Molestias suscipit
+      quisquam repellat eos! Reiciendis repudiandae doloremque tempore aut
+      magnam! Sapiente, iure reiciendis! Lorem ipsum, dolor sit amet consectetur
+      adipisicing elit. Eos porro ducimus iure, vero libero illo quae ratione,
+      enim unde in vel nostrum velit nesciunt eius assumenda recusandae
+      consequuntur temporibus. Vitae.
+    </p>
+  </div>
+
+  <div class="main-container">
+    <div class="post-wrapper">
+      {% for i in posts %}
+      <div class="another-container">
+        <div class="post">
+          <img
+            class="thumbnail"
+            src="uploads/{{i.thumbnail}}"
+            alt="post picture"
+          />
+          <div class="post-preview">
+            <h6 class="post-title">{{ i.post_title }}</h6>
+            <p class="post-intro">{{ i.description }}<br /><br />
+              <a href="{{i.link}}">Read more</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 {% endblock homepage %}
