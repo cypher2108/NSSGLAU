@@ -1,0 +1,1 @@
+web: gunicorn NSSGLAU.wsgi --log-file -
