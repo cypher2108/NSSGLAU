@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from base.models import Contact
+from base.models import Contact, Post
 
 
 def home(request):
@@ -11,13 +11,14 @@ def home(request):
         subject = request.POST['subject']
         email = request.POST['email']
         message = request.POST['message']
-
         try:
             Contact.objects.create(name=name, subject=subject, email=email, message=message)
             error = 'no'
         except:
             error = 'yes'
-    x = {'error': error}
+
+    posts = Post.objects.all()
+    x = {'error': error, 'posts': posts}
     return render(request, 'base/home.html', x)
 
 
