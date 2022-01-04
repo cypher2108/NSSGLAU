@@ -40,7 +40,7 @@
 
   <div id="description">
     <div id="description-heading">
-      <h1>NSS GLA University</h1>
+      <h1 style="font-size: 36px">NSS GLA University</h1>
     </div>
     <div id="detailed-text">
       <p>
@@ -56,7 +56,7 @@
 <!-- section 2 code starts here or Project showcase section -->
 <section class="social-projects-container">
   <div class="project-container">
-    <h1>Social Projects</h1>
+    <h1 style="font-size: 36px; margin: 20px 0">Social Projects</h1>
     <p>
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente debitis
       tenetur, rerum voluptates doloremque iure harum! Molestias suscipit
@@ -80,7 +80,8 @@
           />
           <div class="post-preview">
             <h6 class="post-title">{{ i.post_title }}</h6>
-            <p class="post-intro">{{ i.description }}..<br /><br />
+            <p class="post-intro">
+              {{ i.description }}..<br /><br />
               <a href="{{i.link}}">Read more</a>
             </p>
           </div>
@@ -91,4 +92,103 @@
   </div>
 </section>
 
+<!-- contact form section starts here -->
+<section class="section2">
+  <div class="contact-wrapper">
+    <div class="contact-left">
+      <h1>Having Doubts?</h1>
+      <p>Feel free to ask us!</p>
+    </div>
+
+    <div class="contact-right">
+      <form action="" method="post" id="contact-form">
+        {% csrf_token %}
+
+        <label>Name</label>
+        <input
+          required
+          class="input-field"
+          type="text"
+          name="name"
+          placeholder="Enter your Full Name here."
+        />
+
+        <label>Subject</label>
+        <input
+          required
+          class="input-field"
+          type="text"
+          name="subject"
+          placeholder="Issue regarding."
+        />
+
+        <label>Email</label>
+        <input
+          required
+          class="input-field"
+          type="text"
+          name="email"
+          placeholder="Please tell us how to raech you."
+        />
+
+        <label>Message</label>
+        <textarea
+          required
+          class="input-field"
+          name="message"
+          placeholder="Feel free to say your words."
+        ></textarea>
+
+        <input id="submit-btn" type="submit" value="Send" />
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- login form html starts here -->
+<section class="section3">
+  <!-- <div class="center">
+    <button id="show-login">Login</button>
+  </div> -->
+
+  <div class="popup">
+    <div class="close-btn">&times;</div>
+    <div class="form">
+      <h2>Log in</h2>
+      <div class="form-element">
+        <label for="Username">Username</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Enter Username."
+        />
+      </div>
+
+      <div class="form-element">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter Password."
+        />
+      </div>
+
+      <div class="form-element">
+        <input type="checkbox" name="rememberMe" id="remember-me" />
+        <label for="remember-me">Remember Me</label>
+      </div>
+
+      <div class="form-element">
+        <button>Sign in</button>
+      </div>
+
+      <div class="form-element">
+        <a href="#">Forget Password</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- footer tag starts from here -->
 {% endblock homepage %}
