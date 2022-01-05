@@ -384,7 +384,7 @@ nav ul li.btn>span.show::before {
     border-radius: 5px;
 } */
 
-.popup{
+/* .popup{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -406,7 +406,7 @@ nav ul li.btn>span.show::before {
     transform: translate(-50%, -50%) scale(1);
     transition: top 0ms ease-in-out 0ms,
                 opacity 200ms ease-in-out 0ms,
-                transform 200ms ease-in-out 0ms;     
+                transform 200ms ease-in-out 0ms;
 }
 
 .popup> .close-btn{
@@ -474,7 +474,7 @@ nav ul li.btn>span.show::before {
     text-decoration: none;
     font-weight: 600;
 
-}
+} */
 /* footer styling starts here */
 /* footer styling ends here */
 
@@ -503,6 +503,7 @@ nav ul li.btn>span.show::before {
     .section2> .contact-wrapper{
         width: 95%;
     }
+
 }
 
 @media screen and (max-width: 800px) {
