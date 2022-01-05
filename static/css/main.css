@@ -662,7 +662,7 @@ ul {
     padding: 20px 40px;
     min-width: 420px;
     position: absolute;
-    right: 0;
+    right: 0px;
     top: 10px;
     border-radius: 4px;
     border-left: 8px solid #ffa502;
@@ -675,7 +675,7 @@ ul {
     pointer-events: auto;
   }
   .alert.show{
-    animation: show_slide 1s ease forwards;
+    /* animation: show_slide 1s ease forwards; */
   }
   @keyframes show_slide {
     0%{
@@ -692,7 +692,7 @@ ul {
     }
   }
   .alert.hide{
-    animation: hide_slide 1s ease forwards;
+    /* animation: hide_slide 1s ease forwards; */
   }
   @keyframes hide_slide {
     0%{
