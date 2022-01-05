@@ -240,7 +240,7 @@ nav ul li.btn>span.show::before {
     text-align: center;
 }
 
-.social-projects-container>.project-container{
+.social-projects-container>.project-container {
     padding: 10px 40px 40px 10px;
     margin: 0 auto;
 }
@@ -251,7 +251,7 @@ nav ul li.btn>span.show::before {
     gap: 20px;
     justify-content: center;
     padding-bottom: 50px;
-    border-radius:  7px;
+    border-radius: 7px;
 }
 
 .another-container {
@@ -263,12 +263,12 @@ nav ul li.btn>span.show::before {
     box-shadow: -2px 7px 21px -9px rgba(0, 0, 0, 0.75);
 }
 
-.post{
+.post {
     border-radius: 7px;
 }
 
-.post> img{
-    border-radius:7px 7px 0 0;
+.post>img {
+    border-radius: 7px 7px 0 0;
 }
 
 .thumbnail {
@@ -305,18 +305,18 @@ nav ul li.btn>span.show::before {
     margin-bottom: 50px;
 }
 
-.input-field{
-	width: 100%;
-	padding-top: 10px;
-	padding-bottom:10px;
-	background-color:#ffffff;
-	border-radius: 5px;
-	border:1px solid #d5a142;
-	font-size: 14px;
-	padding: 10px;
+.input-field {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #d5a142;
+    font-size: 14px;
+    padding: 10px;
 }
 
-.contact-wrapper{
+.contact-wrapper {
     width: 1200px;
     height: auto;
     margin: 0 auto;
@@ -328,7 +328,7 @@ nav ul li.btn>span.show::before {
         'contact-left contact-right';
 }
 
-.contact-left{
+.contact-left {
     padding-top: 100px;
     text-align: center;
     font-family: 'Catamaran', sans-serif;
@@ -336,20 +336,20 @@ nav ul li.btn>span.show::before {
     font-size: 32px;
 }
 
-.contact-right{
+.contact-right {
     padding-top: 25px;
 }
 
-#contact-form label{
+#contact-form label {
     line-height: 2.7em;
     font-family: 'Catamaran', sans-serif;
     /* color: #fff; */
     font-size: 18px;
 }
 
-#contact-form textarea{
-	min-height: 100px;
-	font-size: 18px;
+#contact-form textarea {
+    min-height: 100px;
+    font-size: 18px;
     margin: 0 3px;
 }
 
@@ -360,7 +360,7 @@ nav ul li.btn>span.show::before {
     padding-top: 10px;
     padding-bottom: 10px;
     color: #fff;
-    background-color:#d5a142;
+    background-color: #d5a142;
     border: none;
 }
 
@@ -476,6 +476,88 @@ nav ul li.btn>span.show::before {
 
 } */
 /* footer styling starts here */
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: #24262b;
+    padding: 70px 0;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
 /* footer styling ends here */
 
 
@@ -496,12 +578,17 @@ nav ul li.btn>span.show::before {
         width: 95%;
     }
 
-    .social-projects-container > .project-container{
+    .social-projects-container>.project-container {
         width: 95%;
     }
 
-    .section2> .contact-wrapper{
+    .section2>.contact-wrapper {
         width: 95%;
+    }
+
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
     }
 
 }
@@ -572,6 +659,10 @@ nav ul li.btn>span.show::before {
             'slider'
             'description';
         gap: 50px;
+    }
+
+    .footer-col {
+        width: 100%;
     }
 
 }
