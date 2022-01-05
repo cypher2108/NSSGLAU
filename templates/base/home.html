@@ -1,7 +1,5 @@
-{% extends 'base/main.html' %} 
-{% load static %} 
-{% block homepage %} 
-{% include 'base/navbar.html' %}
+{% extends 'base/main.html' %} {% load static %} {% block homepage %} {% include
+'base/navbar.html' %}
 <script>
   document.title = "NSS | GLA University";
 </script>
@@ -184,5 +182,17 @@
     </div>
   </div>
 </div> -->
-{% include 'base/footer.html' %}
+{% include 'base/footer.html' %} 
+{% if error == "no" %}
+<script>
+  alert("Your Query Accepted Successfully, We'll reach you as soon as possible!");
+  window.location = ('{% url 'home' %}');
+</script>
+{% endif %} 
+{% if error == "yes" %}
+<script>
+  alert('Something went wrong,Try Again');
+  window.location = ('{% url 'home' %}')
+</script>
+{% endifequal %} 
 {% endblock homepage %}
