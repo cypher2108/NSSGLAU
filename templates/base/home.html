@@ -145,83 +145,53 @@
   </div>
 </section>
 
-<!-- login form html starts here -->
-<!-- <div class="popup">
-  <div class="close-btn">&times;</div>
-  <div class="form">
-    <h2>Log in</h2>
-    <div class="form-element">
-      <label for="Username">Username</label>
-      <input
-        type="text"
-        name="username"
-        id="username"
-        placeholder="Enter Username."
-      />
-    </div>
-
-    <div class="form-element">
-      <label for="password">Password</label>
-      <input
-        type="password"
-        name="password"
-        id="password"
-        placeholder="Enter Password."
-      />
-    </div>
-
-    <div class="form-element">
-      <input type="checkbox" name="rememberMe" id="remember-me" />
-      <label for="remember-me">Remember Me</label>
-    </div>
-
-    <div class="form-element">
-      <button>Sign in</button>
-    </div>
-
-    <div class="form-element">
-      <a href="#">Forget Password</a>
-    </div>
-  </div>
-</div> -->
-
-<!-- alert msg -->
-<div class="alert hide">
-  <span class="fas fa-check-circle"></span>
-  <span class="msg">Your Query Accepted Successfully, We'll reach you as soon as possible!</span>
-  <span class="close-btn">
+<!-- alert section -->
+<div id="custom-alert" class="alert hide">
+  <span class="fas fa-exclamation-circle"></span>
+  <span id="alert-msg" class="msg">Warning: Something went wrong.</span>
+  <div class="close-btn">
     <span class="fas fa-times"></span>
-  </span>
+  </div>
 </div>
 
-
 {% include 'base/footer.html' %} 
-
 {% if error == "no" %}
 <script>
-  $('#submit-btn').click(function() {
-    $('.alert').removeClass("hide");
-    $('.alert').addClass("show");
-    $('.alert').addClass("showAlert");
-    setTimeout(function(){
-      $('.alert').removeClass("show");
-      $('.alert').addClass("hide");
-    }, 5000)
+  const span = document.getElementById("alert-msg");
+  span.textContent =
+    "Success: Your Query Accepted Successfully, We'll reach you as soon as possible!";
+  $("html, body").animate({ scrollTop: 0 }, "fast");
+  $(".alert").addClass("show");
+  $(".alert").removeClass("hide");
+  $(".alert").addClass("showAlert");
+  setTimeout(function () {
+    $(".alert").removeClass("show");
+    $(".alert").addClass("hide");
+    window.location = "{% url 'home' %}";
+  }, 5000);
+  $(".close-btn").click(function () {
+    $(".alert").removeClass("show");
+    $(".alert").addClass("hide");
+    window.location = "{% url 'home' %}";
   });
-
-  $('.close-btn').click(function() {
-    $('.alert').removeClass("show");
-    $('.alert').addClass("hide");
-  });
-  // alert("Your Query Accepted Successfully, We'll reach you as soon as possible!");
-  window.location = ('{% url 'home' %}');
 </script>
 {% endif %} 
-
 {% if error == "yes" %}
 <script>
-  alert('Something went wrong,Try Again');
-  window.location = ('{% url 'home' %}');
+  $("html, body").animate({ scrollTop: 0 }, "fast");
+  $(".alert").addClass("show");
+  $(".alert").removeClass("hide");
+  $(".alert").addClass("showAlert");
+  setTimeout(function () {
+    $(".alert").removeClass("show");
+    $(".alert").addClass("hide");
+    window.location = ("{% url 'home' %}");
+  }, 5000);
+  $(".close-btn").click(function () {
+  $(".alert").removeClass("show");
+  $(".alert").addClass("hide");
+   window.location = ("{% url 'home' %}");
+  })
 </script>
 {% endif %} 
 {% endblock homepage %}
