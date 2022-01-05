@@ -184,17 +184,44 @@
     </div>
   </div>
 </div> -->
+
+<!-- alert msg -->
+<div class="alert hide">
+  <span class="fas fa-check-circle"></span>
+  <span class="msg">Your Query Accepted Successfully, We'll reach you as soon as possible!</span>
+  <span class="close-btn">
+    <span class="fas fa-times"></span>
+  </span>
+</div>
+
+
 {% include 'base/footer.html' %} 
+
 {% if error == "no" %}
 <script>
-  alert("Your Query Accepted Successfully, We'll reach you as soon as possible!");
+  $('#submit-btn').click(function() {
+    $('.alert').removeClass("hide");
+    $('.alert').addClass("show");
+    $('.alert').addClass("showAlert");
+    setTimeout(function(){
+      $('.alert').removeClass("show");
+      $('.alert').addClass("hide");
+    }, 5000)
+  });
+
+  $('.close-btn').click(function() {
+    $('.alert').removeClass("show");
+    $('.alert').addClass("hide");
+  });
+  // alert("Your Query Accepted Successfully, We'll reach you as soon as possible!");
   window.location = ('{% url 'home' %}');
 </script>
 {% endif %} 
+
 {% if error == "yes" %}
 <script>
   alert('Something went wrong,Try Again');
-  window.location = ('{% url 'home' %}')
+  window.location = ('{% url 'home' %}');
 </script>
 {% endif %} 
 {% endblock homepage %}

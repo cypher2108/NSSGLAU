@@ -11,12 +11,16 @@ def home(request):
         subject = request.POST['subject']
         email = request.POST['email']
         message = request.POST['message']
+        print(name)
+        print(subject)
+        print(email)
+        print(message)
         try:
             Contact.objects.create(name=name, subject=subject, email=email, message=message)
             error = 'no'
         except:
             error = 'yes'
-
+    print(error)
     posts = Post.objects.all()
     x = {'error': error, 'posts': posts}
     return render(request, 'base/home.html', x)
