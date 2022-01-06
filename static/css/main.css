@@ -145,6 +145,10 @@ nav ul li.btn>span.show::before {
     content: '\f00d';
 }
 
+.btn-top-down{
+    display: none;
+}
+
 /* navbar css styling code ends here. */
 
 /* span1 code starts here */
@@ -597,6 +601,10 @@ ul {
     .nav-links-1.show {
         top: 0px;
         z-index: 1;
+    }
+
+    .btn-top-down{
+        display: block;
     }
 
     #top-down-btn{
