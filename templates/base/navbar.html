@@ -15,6 +15,9 @@
       <li><a href="#contact-form">get in touch</a></li>
       <li><p>|</p></li>
       <li><a id="show-login" href="#">login</a></li>
+      <li id="top-down-btn" style="color: #ffffff" class="btn-top-down">
+        <span class="fas fa-bars"></span>
+      </li>
     </div>
     <div class="nav-links-2">
       <li class="search-icon">
@@ -31,5 +34,14 @@
   $(".btn> span").click(function () {
     $(".nav-links-1").toggleClass("show");
     $("nav ul li.btn > span").toggleClass("show");
+    $("nav ul li.btn-top-down > span").toggleClass("show");
   });
+
+  $(".btn-top-down> span").click(function () {
+    $(".nav-links-1").toggleClass("show");
+    $("nav ul li.btn > span").toggleClass("show");
+    $("nav ul li.btn-top-down > span").toggleClass("show");
+  });
+
+
 </script>

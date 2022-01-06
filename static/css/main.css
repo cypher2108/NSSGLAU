@@ -586,7 +586,7 @@ ul {
     .nav-links-1 {
         z-index: -1;
         position: absolute;
-        top: -220PX;
+        top: -300PX;
         right: 0px;
         width: 100%;
         background: #222222;
@@ -595,8 +595,35 @@ ul {
     }
 
     .nav-links-1.show {
-        top: 60px;
-        /* z-index: 1; */
+        top: 0px;
+        z-index: 1;
+    }
+
+    #top-down-btn{
+        display: block;
+        align-content: center;
+        align-items: center;
+        
+        /* width: 60px; */
+        font-size: 29px;
+        flex: 1;
+        padding: 0 10px;
+    }
+
+    #top-down-btn> span{
+        height: 42px;
+        align-content: center;
+        align-items: center;
+        width: 42px;
+        text-align: center;
+        line-height: 42px;
+        /* border: 1px solid #ffffff; */
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    nav ul li.btn-top-down> span.show::before {
+        content: '\f00d';
     }
 
     .nav-links-1>li {
