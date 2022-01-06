@@ -84,7 +84,7 @@ nav ul {
 
 .search-icon {
     height: 40px;
-    width: 240px;
+    width: 220px;
     display: flex;
     background: #f2f2f2;
     border-radius: 5px;
@@ -92,7 +92,7 @@ nav ul {
 
 .search-icon>input {
     height: 100%;
-    width: 200px;
+    width: 180px;
     border: none;
     outline: none;
     padding: 0 10px;
