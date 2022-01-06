@@ -103,7 +103,6 @@
     <div class="contact-right">
       <form action="" method="post" id="contact-form">
         {% csrf_token %}
-
         <label>Name</label>
         <input
           required
@@ -148,7 +147,7 @@
 <!-- alert section -->
 <div id="custom-alert" class="alert hide">
   <span class="fas fa-exclamation-circle"></span>
-  <span id="alert-msg" class="msg">Warning: Something went wrong.</span>
+  <span id="alert-msg" class="msg">Waring: Something went wrong!</span>
   <div class="close-btn">
     <span class="fas fa-times"></span>
   </div>
@@ -159,7 +158,7 @@
 <script>
   const span = document.getElementById("alert-msg");
   span.textContent =
-    "Success: Your Query Accepted Successfully, We'll reach you as soon as possible!";
+    "Success: We'll reach you as soon as possible!";
   $("html, body").animate({ scrollTop: 0 }, "fast");
   $(".alert").addClass("show");
   $(".alert").removeClass("hide");
@@ -168,7 +167,7 @@
     $(".alert").removeClass("show");
     $(".alert").addClass("hide");
     window.location = "{% url 'home' %}";
-  }, 5000);
+  }, 3000);
   $(".close-btn").click(function () {
     $(".alert").removeClass("show");
     $(".alert").addClass("hide");
@@ -186,7 +185,7 @@
     $(".alert").removeClass("show");
     $(".alert").addClass("hide");
     window.location = ("{% url 'home' %}");
-  }, 5000);
+  }, 3000);
   $(".close-btn").click(function () {
   $(".alert").removeClass("show");
   $(".alert").addClass("hide");
