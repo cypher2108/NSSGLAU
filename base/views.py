@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from base.models import Contact, Post
+from base.models import Contact, Event, Post
 
 
 def home(request):
@@ -21,8 +21,12 @@ def home(request):
         except:
             error = 'yes'
     print(error)
-    posts = Post.objects.all()
-    x = {'error': error, 'posts': posts}
+    posts = Post.objects.order_by('-id')[0:3]
+    main_event = Event.objects.order_by('-id')[0]
+    events = Event.objects.order_by('-id')[1:4]
+    main_event.date_of_event.strftime("%b")
+    print(events)
+    x = {'error': error, 'posts': posts,'main_event': main_event, 'events': events}
     return render(request, 'base/home.html', x)
 
 
