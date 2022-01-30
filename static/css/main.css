@@ -563,7 +563,9 @@ ul {
   .event-top{
     grid-area: event-top;
     position: relative;
-    width: 100%;
+    /* width: 100%; */
+    margin: 0 auto;
+    width: 800px;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     /* float: left; */
@@ -574,6 +576,7 @@ ul {
       background: #ffffff;
       /* border: 1px solid #c1c1c1;
       border-radius: 7px; */
+      /* width: 800px; */
       -webkit-box-shadow: -2px 7px 21px -9px rgba(0, 0, 0, 0.5);
       -moz-box-shadow: -2px 7px 21px -9px rgba(0, 0, 0, 0.5);
       box-shadow: -2px 7px 21px -9px rgba(0, 0, 0, 0.5);
@@ -641,7 +644,7 @@ ul {
     /* text-transform: uppercase; */
     padding: 10px 15px;
     border: 2px solid #fff;
-    margin-top: 15px;
+    margin-top: 30px;
     font-size: 18px;
     transition: .5s;
     float: left;
@@ -801,6 +804,13 @@ ul {
             'event-left'
             'event-right';
         gap: 50px;
+    }
+
+    .event-top{
+        width: 95%;
+    }
+    .main-event-banner> .details> p{
+        display: none;
     }
 
 }
