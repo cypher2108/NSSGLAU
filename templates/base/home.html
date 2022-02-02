@@ -6,6 +6,14 @@
   document.title = "NSS | GLA University";
 </script>
 
+<!-- alert section -->
+<div id="custom-alert" class="alert hide">
+  <span class="fas fa-exclamation-circle"></span>
+  <span id="alert-msg" class="msg">Waring: Something went wrong!</span>
+  <div class="close-btn">
+    <span class="fas fa-times"></span>
+  </div>
+</div>
 <!-- span-1 code starts here -->
 <section class="slideshow-section">
   <div id="slider">
@@ -40,7 +48,7 @@
 
   <div id="description">
     <div id="description-heading">
-      <h1>NSS GLA University</h1>
+      <h1 style="font-size: 36px">NSS GLA University</h1>
     </div>
     <div id="detailed-text">
       <p>
@@ -56,7 +64,7 @@
 <!-- section 2 code starts here or Project showcase section -->
 <section class="social-projects-container">
   <div class="project-container">
-    <h1>Social Projects</h1>
+    <h1 style="font-size: 36px; margin: 20px 0">Social Projects</h1>
     <p>
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente debitis
       tenetur, rerum voluptates doloremque iure harum! Molestias suscipit
@@ -80,7 +88,8 @@
           />
           <div class="post-preview">
             <h6 class="post-title">{{ i.post_title }}</h6>
-            <p class="post-intro">{{ i.description }}<br /><br />
+            <p class="post-intro">
+              {{ i.description }}..<br /><br />
               <a href="{{i.link}}">Read more</a>
             </p>
           </div>
@@ -91,4 +100,153 @@
   </div>
 </section>
 
+<!-- Impact created annual Link -->
+<section class="social-projects-container">
+  <div class="project-container">
+    <h1 style="font-size: 28px; margin: 20px 0">Impact Created</h1>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente debitis
+      tenetur, rerum voluptates doloremque iure harum! Molestias suscipit
+      quisquam repellat eos! Reiciendis repudiandae doloremque tempore aut
+      magnam! Sapiente, <a href="#">Read More</a>
+    </p>
+  </div>
+</section>
+
+<!-- Event showcase section starts here -->
+<section class="events-showcase-container">
+  <div class="event-container">
+    <h1 style="font-size: 36px; margin: 20px 0">Events</h1>
+
+    <div class="event-wrapper">
+      <div class="event-top">
+        <div class="main-event-banner">
+          <div class="event-date">
+            <h2>
+              {{main_event.date_of_event|date:"d"}}<br />
+              <span>{{main_event.date_of_event|date:"b"}}</span>
+            </h2>
+          </div>
+          <div
+            class="details"
+            style="background: rgba(0,0, 0, 0.7) url('..{{main_event.thumbnail.url}}'); background-size: cover; background-blend-mode: darken; background-position: center; "
+          >
+            <h3>{{main_event.event_title}}</h3>
+            <p>{{main_event.description}}</p>
+            <a href="{{main_event.link}}">Know More</a>
+          </div>
+        </div>
+      </div>
+      <div class="event-left">
+        <div class="social-menu">
+          <!-- <h1>Social Media Button Hover Effect</h1> -->
+          <ul>
+            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+            <li><a href=""><i class="fa fa-instagram"></i></a></li>
+            <li><a href=""><i class="fa fa-youtube"></i></a></li>
+            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="event-right">
+        <h1>Event Right Grid</h1>
+        <!-- small event wrapper -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- contact form section starts here -->
+<section class="section2">
+  <div class="contact-wrapper">
+    <div class="contact-left">
+      <h1 id="get-in-touch">Having Doubts?</h1>
+      <p>Feel free to ask us!</p>
+    </div>
+
+    <div class="contact-right">
+      <form action="" method="post" id="contact-form">
+        {% csrf_token %}
+        <label>Name</label>
+        <input
+          required
+          class="input-field"
+          type="text"
+          name="name"
+          placeholder="Enter your Full Name here."
+        />
+
+        <label>Subject</label>
+        <input
+          required
+          class="input-field"
+          type="text"
+          name="subject"
+          placeholder="Issue regarding."
+        />
+
+        <label>Email</label>
+        <input
+          required
+          class="input-field"
+          type="text"
+          name="email"
+          placeholder="Please tell us how to raech you."
+        />
+
+        <label>Message</label>
+        <textarea
+          required
+          class="input-field"
+          name="message"
+          placeholder="Feel free to say your words."
+        ></textarea>
+
+        <input id="submit-btn" type="submit" value="Send" />
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- footer section starts here. -->
+{% include 'base/footer.html' %} 
+{% if error == "no" %}
+<script>
+  const span = document.getElementById("alert-msg");
+  span.textContent = "Success: We'll reach you as soon as possible!";
+  $("html, body").animate({ scrollTop: 0 }, "fast");
+  $(".alert").addClass("show");
+  $(".alert").removeClass("hide");
+  $(".alert").addClass("showAlert");
+  setTimeout(function () {
+    $(".alert").removeClass("show");
+    $(".alert").addClass("hide");
+    window.location = "{% url 'home' %}";
+  }, 3000);
+  $(".close-btn").click(function () {
+    $(".alert").removeClass("show");
+    $(".alert").addClass("hide");
+    window.location = "{% url 'home' %}";
+  });
+</script>
+{% endif %} 
+{% if error == "yes" %}
+<script>
+  $("html, body").animate({ scrollTop: 0 }, "fast");
+  $(".alert").addClass("show");
+  $(".alert").removeClass("hide");
+  $(".alert").addClass("showAlert");
+  setTimeout(function () {
+    $(".alert").removeClass("show");
+    $(".alert").addClass("hide");
+    window.location = "{% url 'home' %}";
+  }, 3000);
+  $(".close-btn").click(function () {
+    $(".alert").removeClass("show");
+    $(".alert").addClass("hide");
+    window.location = "{% url 'home' %}";
+  });
+</script>
+{% endif %} 
 {% endblock homepage %}

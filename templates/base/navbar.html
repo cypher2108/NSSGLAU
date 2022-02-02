@@ -2,7 +2,7 @@
 <nav>
   <div class="logo">
     <img class="logo-img" src="{% static '/img/logo.jpeg' %}" alt="logo" />
-    <h1>NSS GLAU</h1>
+    <h1 id="nssglau">NSS GLAU</h1>
   </div>
   <ul>
     <li style="color: #ffffff" class="btn">
@@ -12,9 +12,12 @@
       <li><a href="{% url 'home' %}">home</a></li>
       <li><a href="{% url 'about' %}">about</a></li>
       <li><p>|</p></li>
-      <li><a href="#contact-form">get in touch</a></li>
+      <li><a href="#get-in-touch">get in touch</a></li>
       <li><p>|</p></li>
-      <li><a href="#">login</a></li>
+      <li><a id="show-login" href="#">login</a></li>
+      <li id="top-down-btn" style="color: #ffffff" class="btn-top-down">
+        <span class="fas fa-bars"></span>
+      </li>
     </div>
     <div class="nav-links-2">
       <li class="search-icon">
@@ -31,5 +34,14 @@
   $(".btn> span").click(function () {
     $(".nav-links-1").toggleClass("show");
     $("nav ul li.btn > span").toggleClass("show");
+    $("nav ul li.btn-top-down > span").toggleClass("show");
   });
+
+  $(".btn-top-down> span").click(function () {
+    $(".nav-links-1").toggleClass("show");
+    $("nav ul li.btn > span").toggleClass("show");
+    $("nav ul li.btn-top-down > span").toggleClass("show");
+  });
+
+
 </script>
