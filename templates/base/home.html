@@ -1,5 +1,5 @@
 {% extends 'base/main.html' %} 
-{% load static %}
+{% load static %} 
 {% block homepage %} 
 {% include 'base/navbar.html' %}
 <script>
@@ -121,15 +121,16 @@
     <div class="event-wrapper">
       <div class="event-top">
         <div class="main-event-banner">
-          
           <div class="event-date">
             <h2>
               {{main_event.date_of_event|date:"d"}}<br />
               <span>{{main_event.date_of_event|date:"b"}}</span>
             </h2>
           </div>
-
-          <div class="details" style="background: rgba(0,0, 0, 0.7) url('..{{main_event.thumbnail.url}}'); background-size: cover; background-blend-mode: darken; background-position: center; ">
+          <div
+            class="details"
+            style="background: rgba(0,0, 0, 0.7) url('..{{main_event.thumbnail.url}}'); background-size: cover; background-blend-mode: darken; background-position: center; "
+          >
             <h3>{{main_event.event_title}}</h3>
             <p>{{main_event.description}}</p>
             <a href="{{main_event.link}}">Know More</a>
@@ -137,10 +138,20 @@
         </div>
       </div>
       <div class="event-left">
-        <h1>Event Left Grid</h1>
+        <div class="social-menu">
+          <!-- <h1>Social Media Button Hover Effect</h1> -->
+          <ul>
+            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+            <li><a href=""><i class="fa fa-instagram"></i></a></li>
+            <li><a href=""><i class="fa fa-youtube"></i></a></li>
+            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
       </div>
       <div class="event-right">
-        <h1>Event right grid</h1>
+        <h1>Event Right Grid</h1>
+        <!-- small event wrapper -->
       </div>
     </div>
   </div>
@@ -199,7 +210,8 @@
 </section>
 
 <!-- footer section starts here. -->
-{% include 'base/footer.html' %} {% if error == "no" %}
+{% include 'base/footer.html' %} 
+{% if error == "no" %}
 <script>
   const span = document.getElementById("alert-msg");
   span.textContent = "Success: We'll reach you as soon as possible!";
@@ -218,7 +230,8 @@
     window.location = "{% url 'home' %}";
   });
 </script>
-{% endif %} {% if error == "yes" %}
+{% endif %} 
+{% if error == "yes" %}
 <script>
   $("html, body").animate({ scrollTop: 0 }, "fast");
   $(".alert").addClass("show");
@@ -235,4 +248,5 @@
     window.location = "{% url 'home' %}";
   });
 </script>
-{% endif %} {% endblock homepage %}
+{% endif %} 
+{% endblock homepage %}

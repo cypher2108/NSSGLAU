@@ -145,7 +145,7 @@ nav ul li.btn>span.show::before {
     content: '\f00d';
 }
 
-.btn-top-down{
+.btn-top-down {
     display: none;
 }
 
@@ -369,6 +369,7 @@ nav ul li.btn>span.show::before {
     border: none;
     cursor: pointer;
 }
+
 /* footer styling starts here */
 .container {
     max-width: 1170px;
@@ -451,12 +452,13 @@ ul {
     color: #24262b;
     background-color: #ffffff;
 }
+
 /* footer styling ends here */
 
 
 /* alert styling */
 
-  .alert{
+.alert {
     background: #ffdb9b;
     padding: 15px 20px;
     width: 95%;
@@ -468,59 +470,73 @@ ul {
     overflow: hidden;
     opacity: 0;
     pointer-events: none;
-  }
-  .alert.showAlert{
+}
+
+.alert.showAlert {
     opacity: 1;
     pointer-events: auto;
-  }
-  .alert.show{
+}
+
+.alert.show {
     /* animation: show_slide 1s ease forwards; */
-  }
-  @keyframes show_slide {
-    0%{
-      transform: translateX(100%);
+}
+
+@keyframes show_slide {
+    0% {
+        transform: translateX(100%);
     }
-    40%{
-      transform: translateX(-10%);
+
+    40% {
+        transform: translateX(-10%);
     }
-    80%{
-      transform: translateX(0%);
+
+    80% {
+        transform: translateX(0%);
     }
-    100%{
-      transform: translateX(-10px);
+
+    100% {
+        transform: translateX(-10px);
     }
-  }
-  .alert.hide{
+}
+
+.alert.hide {
     /* animation: hide_slide 1s ease forwards; */
-  }
-  @keyframes hide_slide {
-    0%{
-      transform: translateX(-10px);
+}
+
+@keyframes hide_slide {
+    0% {
+        transform: translateX(-10px);
     }
-    40%{
-      transform: translateX(0%);
+
+    40% {
+        transform: translateX(0%);
     }
-    80%{
-      transform: translateX(-10%);
+
+    80% {
+        transform: translateX(-10%);
     }
-    100%{
-      transform: translateX(100%);
+
+    100% {
+        transform: translateX(100%);
     }
-  }
-  .alert .fa-exclamation-circle{
+}
+
+.alert .fa-exclamation-circle {
     position: absolute;
     left: 5px;
     top: 50%;
     transform: translateY(-50%);
     color: #ce8500;
     font-size: 30px;
-  }
-  .alert .msg{
+}
+
+.alert .msg {
     padding: 0px 20px;
     font-size: 12px;
     color: #ce8500;
-  }
-  .alert .close-btn{
+}
+
+.alert .close-btn {
     position: absolute;
     right: 0px;
     top: 50%;
@@ -528,78 +544,81 @@ ul {
     background: #ffd080;
     padding: 5px 15px;
     cursor: pointer;
-  }
-  .alert .close-btn:hover{
+}
+
+.alert .close-btn:hover {
     background: #ffc766;
-  }
-  .alert .close-btn .fas{
+}
+
+.alert .close-btn .fas {
     color: #ce8500;
     font-size: 22px;
     line-height: 40px;
-  }
+}
 
-  /* Event container styling starts here */
-  .events-showcase-container{
-      width: 1200px;
-      margin: 0 auto;
-  }
+/* Event container styling starts here */
+.events-showcase-container {
+    width: 1200px;
+    margin: 0 auto;
+}
 
-  .event-container> h1{
-      text-align: center;
-  }
+.event-container>h1 {
+    text-align: center;
+}
 
-  .event-wrapper{
-      height: auto;
-      padding-top: 30px;
-      padding-bottom: 10px;
-      display: grid;
-      grid-template-columns: 0.60fr 0.40fr;
-      grid-template-areas: 
+.event-wrapper {
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    display: grid;
+    grid-template-columns: 0.3fr 0.7fr;
+    grid-template-areas:
         'event-top event-top'
         'event-left event-right';
     row-gap: 30px;
-  }
+    column-gap: 30px;
+}
 
-  .event-top{
+.event-top {
     grid-area: event-top;
     position: relative;
-    /* width: 100%; */
+    width: 100%;
     margin: 0 auto;
-    width: 800px;
+    /* width: 800px; */
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     /* float: left; */
     box-sizing: border-box;
-  }
+}
 
-  .main-event-banner{
-      background: #ffffff;
-      /* border: 1px solid #c1c1c1;
+.main-event-banner {
+    background: #ffffff;
+    /* border: 1px solid #c1c1c1;
       border-radius: 7px; */
-      /* width: 800px; */
-      -webkit-box-shadow: -2px 7px 21px -9px rgba(0, 0, 0, 0.5);
-      -moz-box-shadow: -2px 7px 21px -9px rgba(0, 0, 0, 0.5);
-      box-shadow: -2px 7px 21px -9px rgba(0, 0, 0, 0.5);
-  }
+    /* width: 800px; */
+    -webkit-box-shadow: -2px 7px 21px -9px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: -2px 7px 21px -9px rgba(0, 0, 0, 0.5);
+    box-shadow: -2px 7px 21px -9px rgba(0, 0, 0, 0.5);
+}
 
-  .main-event-banner> .event-date{
-      position: absolute;
-      padding: 20px;
-      background: #262626;
-      color: #fff;
-      box-sizing: border-box;
-      width: 30%;
-      height: 100%;
-      float: left;
-      text-align: center;
-      transition: .5s;
-  }
+.main-event-banner>.event-date {
+    position: absolute;
+    padding: 20px;
+    background: #262626;
+    color: #fff;
+    box-sizing: border-box;
+    width: 20%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    transition: .5s;
+}
 
-  .main-event-banner:hover> .event-date{
+.main-event-banner:hover>.event-date {
     background: #e91e63;
 }
 
-.main-event-banner> .event-date> h2{
+.main-event-banner>.event-date>h2 {
     position: relative;
     margin: 0;
     padding: 0;
@@ -610,35 +629,35 @@ ul {
     line-height: 30px;
 }
 
-.main-event-banner> .event-date> h2> span{
+.main-event-banner>.event-date>h2>span {
     font-size: 30px;
 }
 
-.main-event-banner> .details{
+.main-event-banner>.details {
     padding: 20px;
     background-color: #fff;
     color: #fff;
     box-sizing: border-box;
-    width: 70%;
+    width: 80%;
     float: right;
     height: inherit;
 }
 
-.main-event-banner> .details> h3{
+.main-event-banner>.details>h3 {
     position: relative;
     margin: 0;
     padding: 0;
     font-size: 22px;
 }
 
-.main-event-banner> .details> p{
+.main-event-banner>.details>p {
     position: relative;
     margin: 10px 0 0;
     padding: 0;
     font-size: 16px;
 }
 
-.main-event-banner> .details> a{
+.main-event-banner>.details>a {
     display: block;
     text-decoration: none;
     /* text-transform: uppercase; */
@@ -651,10 +670,82 @@ ul {
     color: #fff;
 }
 
-.main-event-banner> .details> a:hover{
+.main-event-banner>.details>a:hover {
     background: #e91e63;
     color: #fff;
-    
+
+}
+
+.event-wrapper>.event-left {
+    background-color: #262626;
+    color: #fff;
+}
+
+/* social links styling */
+.social-menu{
+    height: auto;
+}
+.social-menu ul {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 30px 0;
+    margin: 20px 0;
+    display: flex;
+}
+
+.social-menu ul li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.social-menu ul li .fa {
+    color: #000000;
+    font-size: 25px;
+    line-height: 50px;
+    transition: .5s;
+}
+
+.social-menu ul li .fa:hover {
+    color: #ffffff;
+}
+
+.social-menu ul li a {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    text-align: center;
+    transition: 0.5s;
+    transform: translate(0, 0px);
+    box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.5);
+}
+
+.social-menu ul li a:hover {
+    transform: rotate(0deg) skew(0deg) translate(0, -10px);
+}
+
+.social-menu ul li:nth-child(1) a:hover {
+    background-color: #3b5999;
+}
+
+.social-menu ul li:nth-child(2) a:hover {
+    background-color: #55acee;
+}
+
+.social-menu ul li:nth-child(3) a:hover {
+    background-color: #e4405f;
+}
+
+.social-menu ul li:nth-child(4) a:hover {
+    background-color: #cd201f;
+}
+
+.social-menu ul li:nth-child(5) a:hover {
+    background-color: #0077B5;
 }
 
 
@@ -727,22 +818,22 @@ ul {
         z-index: 1;
     }
 
-    .btn-top-down{
+    .btn-top-down {
         display: block;
     }
 
-    #top-down-btn{
+    #top-down-btn {
         display: block;
         align-content: center;
         align-items: center;
-        
+
         /* width: 60px; */
         font-size: 29px;
         flex: 1;
         padding: 0 10px;
     }
 
-    #top-down-btn> span{
+    #top-down-btn>span {
         height: 42px;
         align-content: center;
         align-items: center;
@@ -754,7 +845,7 @@ ul {
         cursor: pointer;
     }
 
-    nav ul li.btn-top-down> span.show::before {
+    nav ul li.btn-top-down>span.show::before {
         content: '\f00d';
     }
 
@@ -806,11 +897,21 @@ ul {
         gap: 50px;
     }
 
-    .event-top{
+    .event-top {
         width: 95%;
     }
-    .main-event-banner> .details> p{
+
+    .main-event-banner>.details>p {
         display: none;
     }
+
+    .main-event-banner>.event-date>h2 {
+        font-size: 30px;
+    }
+
+    .main-event-banner>.event-date>h2>span {
+        font-size: 22px;
+    }
+
 
 }
