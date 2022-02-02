@@ -894,7 +894,7 @@ ul {
             'event-top'
             'event-left'
             'event-right';
-        gap: 50px;
+        gap: 20px;
     }
 
     .event-top {
