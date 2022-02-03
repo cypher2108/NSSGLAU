@@ -141,17 +141,44 @@
         <div class="social-menu">
           <!-- <h1>Social Media Button Hover Effect</h1> -->
           <ul>
-            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-            <li><a href=""><i class="fa fa-instagram"></i></a></li>
-            <li><a href=""><i class="fa fa-youtube"></i></a></li>
-            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+            <li>
+              <a href=""><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-youtube"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-linkedin"></i></a>
+            </li>
           </ul>
         </div>
       </div>
       <div class="event-right">
-        <h1>Event Right Grid</h1>
         <!-- small event wrapper -->
+        {% for i in events %}
+        <div class="small-event-banner">
+          <div class="small-event-date">
+            <h2>
+              {{i.date_of_event|date:"d"}}<br />
+              <span>{{i.date_of_event|date:"b"}}</span>
+            </h2>
+          </div>
+          <div
+            class="small-event-details"
+            style="background: rgba(0,0, 0, 0.4) url('..{{i.thumbnail.url}}'); background-size: cover; background-blend-mode: darken; background-position: center; "
+          >
+            <h3>{{i.event_title}}</h3>
+            <p>{{i.description}}</p>
+            <a href="{{i.link}}">Know More</a>
+          </div>
+        </div>
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -211,6 +238,7 @@
 
 <!-- footer section starts here. -->
 {% include 'base/footer.html' %} 
+
 {% if error == "no" %}
 <script>
   const span = document.getElementById("alert-msg");
