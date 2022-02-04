@@ -26,7 +26,7 @@ class Post(models.Model):
 class Event(models.Model):
     event_title = models.CharField(max_length=150)
     date_of_event = models.DateField(auto_now=False, auto_now_add=False)
-    description = models.TextField(max_length=1000)
+    description = models.TextField(max_length=500)
     link = models.URLField(max_length=200)
     thumbnail = models.ImageField(upload_to ='events/%Y/%m/%d/')
     
