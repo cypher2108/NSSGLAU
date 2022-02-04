@@ -38,3 +38,14 @@ class Event(models.Model):
     def __str__(self):
         return self.event_title
 
+class Blog(models.Model):
+    blog_title = models.CharField(max_length=50)
+    description = models.TextField(max_length=100)
+    link = models.URLField(max_length=200)
+    thumbnail = models.ImageField(upload_to ='blogs/%Y/%m/%d/')
+    author = models.CharField(max_length=50)
+    date_published = models.DateField(auto_now=False, auto_now_add=False)
+
+    def __str__(self):
+        return self.blog_title + " by " + self.author
+
