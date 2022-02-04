@@ -174,7 +174,6 @@
             style="background: rgba(0,0, 0, 0.4) url('..{{i.thumbnail.url}}'); background-size: cover; background-blend-mode: darken; background-position: center; "
           >
             <h3>{{i.event_title}}</h3>
-            <p>{{i.description}}</p>
             <a href="{{i.link}}">Know More</a>
           </div>
         </div>
@@ -195,66 +194,27 @@
 <section id="blog">
   <!--heading-->
   <div class="blog-heading">
-    <span> My recent post</span>
-    <h3>MY BLOG</h3>
+    <span>Recent post</span>
+    <h3>Our Blogs</h3>
   </div>
 
   <!--blog container-->
   <div class="blog-container">
 
-    <!--box-1-->
-    <div class="blog-box">
-      <!--img--> 
+  {% for i in blogs %}
+    <div class="blog-box"> 
       <div class="blog-img">
-          <img 
-          src="{% static '/img/sliding-img/1.jpeg' %}"  alt="blog image 1 alt.">
+          <img src="uploads/{{i.thumbnail}}" alt="blog image 1.">
          </div>
-
-         <!--text-->
          <div class="blog-text">
-           <span>02 Feb. 2022 / NSS GLAU </span>
-           <a href="#" class=".blog-title">blog content off NSS GLAU</a>
-           <p>blog, in full Web log or Weblog, online journal where an individual, group, or corporation presents a record of activities, thoughts, or beliefs. Some blogs operate mainly as news filters, collecting various online sources and adding short comments and Internet links.</p>
-           <a href="#">read more</a>
-
+           <!-- 02 Feb. 2022 -->
+           <span>{{i.date_published}} / {{i.author}} </span>
+           <a href="{{i.link}}" class="blog-title">{{i.blog_title}}</a>
+           <p>{{i.description}}</p>
+           <a href="{{i.link}}">read more</a>
          </div>
     </div>
-
-    <!--box-2-->
-    <div class="blog-box">
-      <!--img--> 
-      <div class="blog-img">
-          <img 
-          src="{% static '/img/sliding-img/2.jpeg' %}"  alt="blog image 1 alt.">
-         </div>
-
-         <!--text-->
-         <div class="blog-text">
-           <span>02 Feb. 2022 / NSS GLAU 2 </span>
-           <a href="#" class=".blog-title">blog content off NSS GLAU</a>
-           <p>blog, in full Web log or Weblog, online journal where an individual, group, or corporation presents a record of activities, thoughts, or beliefs. Some blogs operate mainly as news filters, collecting various online sources and adding short comments and Internet links.</p>
-           <a href="#">read more</a>
-
-         </div>
-    </div>
-
-    <!--box-3-->
-    <div class="blog-box">
-      <!--img--> 
-      <div class="blog-img">
-          <img 
-          src="{% static '/img/sliding-img/3.jpeg' %}"  alt="blog image 1 alt.">
-         </div>
-
-         <!--text-->
-         <div class="blog-text">
-           <span>02 Feb. 2022 / NSS GLAU 3 </span>
-           <a href="#" class=".blog-title">blog content off NSS GLAU</a>
-           <p>blog, in full Web log or Weblog, online journal where an individual, group, or corporation presents a record of activities, thoughts, or beliefs. Some blogs operate mainly as news filters, collecting various online sources and adding short comments and Internet links.</p>
-           <a href="#">read more</a>
-
-         </div>
-    </div>
+    {% endfor %}
   </div>
 </section>
 
