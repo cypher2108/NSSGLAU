@@ -18,6 +18,13 @@ def user_login(request):
     d = {'error': error}
     return render(request, 'accounts/login.html', d)
 
+def user_logout(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    else:
+        logout(request)
+        return redirect('home')
+
 
 def register(request):
     return render(request, 'accounts/register.html')

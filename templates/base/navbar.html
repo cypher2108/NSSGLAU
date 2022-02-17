@@ -14,7 +14,12 @@
       <li><p>|</p></li>
       <li><a href="#get-in-touch">get in touch</a></li>
       <li><p>|</p></li>
+      {% if user.is_authenticated %}
+      <li><a id="show-login" href="#">{{user.first_name}}</a></li>
+      <li><a id="show-login" href="{% url 'logout' %}">logout</a></li>
+      {% else %}
       <li><a id="show-login" href="{% url 'login' %}">login</a></li>
+      {% endif %}
       <li id="top-down-btn" style="color: #ffffff" class="btn-top-down">
         <span class="fas fa-bars"></span>
       </li>
