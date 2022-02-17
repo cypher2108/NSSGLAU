@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;700&display=swap');
+
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+* {
+    margin: 0px;
+    height: fit-content;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* navbar css styling code starts here */
+nav {
+    background: #00a4cf;
+    padding: 10px 40px 10px 70px;
+    border: 1px solid #00a4cf;
+    border-left: none;
+    border-right: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo {
+    display: flex;
+}
+
+.logo h1 {
+    padding-left: 10px;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.logo>.logo-img {
+    width: 40px;
+    border-radius: 20px;
+}
+
+.nav-links-1 {
+    padding: 0 25px;
+    display: inline-flex;
+}
+
+.nav-links-1>li>a {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0 12px;
+    color: #ffffff;
+}
+
+.nav-links-1>li>p {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0 12px;
+    color: #ffffff;
+}
+
+.nav-links-1>li>a:hover {
+    color: cyan;
+}
+
+
+.search-icon {
+    height: 40px;
+    width: 220px;
+    display: flex;
+    background: #f2f2f2;
+    border-radius: 5px;
+}
+
+.search-icon>input {
+    height: 100%;
+    width: 180px;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    color: #000;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+}
+
+.icon {
+    height: 100%;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #cccccc;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.icon:hover {
+    background: #e6e6e6;
+
+}
+
+.icon>span {
+    color: #222222;
+    font-size: 18px;
+}
+
+.btn {
+    width: 60px;
+    font-size: 29px;
+    flex: 1;
+    padding: 0 10px;
+    display: none;
+}
+
+.btn>span {
+    height: 42px;
+    align-content: center;
+    align-items: center;
+    width: 42px;
+    text-align: center;
+    line-height: 42px;
+    border: 1px solid #00a4cf;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav ul li.btn>span.show::before {
+    content: '\f00d';
+}
+
+.btn-top-down {
+    display: none;
+}
+
+/* navbar css styling code ends here. */
+
+@media screen and (max-width: 1200px) {
+    nav {
+        padding: 10px 40px 10px 0px;
+    }
+
+    .logo>h1 {
+        display: none;
+    }
+
+    .nav-links-1 {
+        flex: 4;
+    }
+}
+
+
+
+@media screen and (max-width: 800px) {
+
+    .logo {
+        display: none;
+    }
+
+    .btn {
+        display: block;
+        align-content: center;
+        align-items: center;
+    }
+
+    nav {
+        z-index: 1;
+        padding: 9px 40px 9px 0;
+    }
+
+    .nav-links-1 {
+        z-index: -1;
+        position: absolute;
+        top: -300PX;
+        right: 0px;
+        width: 100%;
+        background: #222222;
+        display: inline-block;
+        transition: top .4s;
+    }
+
+    .nav-links-1.show {
+        top: 0px;
+        z-index: 1;
+    }
+
+    .btn-top-down {
+        display: block;
+    }
+
+    #top-down-btn {
+        display: block;
+        align-content: center;
+        align-items: center;
+
+        /* width: 60px; */
+        font-size: 29px;
+        flex: 1;
+        padding: 0 10px;
+    }
+
+    #top-down-btn>span {
+        height: 42px;
+        align-content: center;
+        align-items: center;
+        width: 42px;
+        text-align: center;
+        line-height: 42px;
+        /* border: 1px solid #ffffff; */
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    nav ul li.btn-top-down>span.show::before {
+        content: '\f00d';
+    }
+
+    .nav-links-1>li {
+        text-align: center;
+        line-height: 30px;
+        margin: 30px 0;
+    }
+
+    .nav-links-1>li>p {
+        display: none;
+    }
+
+    .nav-links-1>li>a {
+        font-size: 19px;
+    }
+}
