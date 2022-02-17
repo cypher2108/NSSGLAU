@@ -41,6 +41,7 @@
                 consectetur adipisicing.
               </p>
               <form action="#" method="post">
+                {% csrf_token %}
                 <div class="form-group first">
                   <label for="username">Username</label>
                   <input
@@ -48,6 +49,7 @@
                     class="form-control"
                     placeholder="your-email@gmail.com"
                     id="username"
+                    name="uname"
                   />
                 </div>
                 <div class="form-group last mb-3">
@@ -57,6 +59,7 @@
                     class="form-control"
                     placeholder="Your Password"
                     id="password"
+                    name="pword"
                   />
                 </div>
 
@@ -86,5 +89,20 @@
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+
+    {% if error == "no" %}
+        <script>
+            alert('Logged in Successful');
+            window.location = ('{% url 'home' %}');
+        </script>
+    {% endif %}
+
+
+    {% if error == "yes" %}
+        <script>
+            alert('Invalid Login Credentials,Try Again');
+        </script>
+    {% endif %}
+
   </body>
 </html>
